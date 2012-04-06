@@ -5,17 +5,24 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'sqlite3'
 gem 'haml'
 
 group :development do
   gem 'rspec-rails', '2.9.0'
+  gem 'sqlite3'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
+
+group :production do
+  # gems specifically for Heroku go here
+  gem 'pg'
 end
 
 group :test do
   gem 'rspec', '2.9.0'
   gem 'webrat', '0.7.1'
+  gem 'sqlite3'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 # Gems used only for assets and not required
